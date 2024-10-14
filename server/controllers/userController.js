@@ -25,7 +25,8 @@ class UserController {
 
     const hashPassword = await bcrypt.hash(password, 5)
     const user = await User.create({email, role, password: hashPassword})
-    const basket = await Basket.create({userId: user.id})
+    await Basket.create({userId: user.id})
+    // const basket = await Basket.create({userId: user.id}) // basket пока не используется
 
     const token = genetateJwt(user.id, user.email, user.role)
     return res.json({token})
@@ -45,7 +46,7 @@ class UserController {
     return res.json({token})
   }
 
-  async check(req, res, next) {
+  async check(req, res) {
     // const { id } = req.query
     //
     // if (!id) {

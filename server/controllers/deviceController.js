@@ -1,8 +1,8 @@
 const uuid = require('uuid')
 const path = require('path')
-const { Device, DeviceInfo, Type} = require('../models/models')
+const { Device, DeviceInfo} = require('../models/models')
 const ApiError = require('../error/ApiError')
-const { log } = require('console')
+// const { log } = require('console')
 
 class DeviceController {
   async create(req, res, next) {
@@ -18,8 +18,8 @@ class DeviceController {
       const device = await Device.create({ name, price, brandId, typeId, img: fileName })
 
       if (info) {
-        const info = JSON.parse(info)
-        info.forEach(i =>
+        const infoParsed = JSON.parse(info)
+        infoParsed.forEach(i =>
             DeviceInfo.create({
               title: i.title,
               description: i.description,
