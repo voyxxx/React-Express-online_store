@@ -20,6 +20,10 @@ class ApiError extends Error {
   static unauthorized() {
     return new ApiError(401, 'Пользователь не авторизован')
   }
+
+  static conflict(message = 'данные уже существуют') {
+    return new ApiError(409, message)
+  }
 }
 
 module.exports = ApiError

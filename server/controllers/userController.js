@@ -6,7 +6,7 @@ const {User, Basket} = require('../models/models')
 const genetateJwt = (id, email, role) => {
   return jwt.sign(
     {id, email, role}, 
-    process.env.SECRET_KEY, 
+    process.env.SECRET_KEY,
     {expiresIn: '24h'}
   )
 }
@@ -32,7 +32,7 @@ class UserController {
   }
 
   async login(req, res, next) {
-    const {email, password} = req.body
+    const { email, password } = req.body
     const user = await User.findOne({where: {email}})
     if (!user) {
       return next(ApiError.internal('Пользователь с таким email не найден'))
@@ -46,16 +46,19 @@ class UserController {
   }
 
   async check(req, res, next) {
-  //   const {id } = req.query
-
-  //   if (!id) {
-  //     return next(ApiError.badRequest('Не передан id'))
-  //   }
-  //   res.json({id})
+    // const { id } = req.query
+    //
+    // if (!id) {
+    //   return next(ApiError.badRequest('Не передан id'))
+    // }
+    // res.json({id})
     const token = genetateJwt(req.user.id, req.user.email, req.user.role)
     return res.json({token})
   }
 
+  async logout(req, res, next) {
+
+  }
 }
 
 module.exports = new UserController()
