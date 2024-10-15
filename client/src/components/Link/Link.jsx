@@ -5,9 +5,9 @@ import { colors } from "src/common/styled/constants";
 
 const StyledLink = styled(({ css, ...props }) => <RouterLink {...props} />)`
   text-decoration: none;
-  padding: 8px 16px;
+  padding: ${({css}) => css?.padding || ''};
   border-radius: 8px;
-  box-shadow: ${({css}) => css?.boxShadow || 'none'};
+  box-shadow: ${({css}) => css?.boxShadow || ''};
   color: ${({css}) => css?.color || `rgb(${colors.black})`};
   background-color: ${({css}) => css?.bgColor ? `rgb(${css?.bgColor})` : `inherit`};
   border: ${({css}) => css?.borderColor ? `1px solid rgb(${css?.borderColor})` : 'none'};
@@ -20,6 +20,7 @@ const StyledLink = styled(({ css, ...props }) => <RouterLink {...props} />)`
 `
 
 const Link = (props) => {
+  console.log(props)
   return (
     <StyledLink {...props} />
   )

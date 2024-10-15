@@ -3,7 +3,9 @@ import { colors } from 'src/common/styled/constants'
 import React from "react";
 
 import { AuthInput } from './components/Input'
+import Link from 'src/components/Link/Link';
 import Button from 'src/components/Basic/Button'
+import { REGISTRATION_ROUTE } from 'src/utils/const';
 
 const Auth = () => {
   return (
@@ -25,7 +27,16 @@ const Auth = () => {
         placeholder="Введите ваш пароль..."
       />
       <div className="loginButton-row">
-        Нет аккаунта, зарегистрируйтесь
+        Нет аккаунта,
+        <Link
+          to={REGISTRATION_ROUTE}
+          css={{
+            borderColor: colors.red,
+            bgColor: colors.pinkLight
+          }}
+        >
+          Админ панель
+        </Link>зарегистрируйтесь
         <Button
           type='submit'
           alignSelf='flex-end'

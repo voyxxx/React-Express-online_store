@@ -44,10 +44,6 @@ const NavBar = observer(() => {
           <Styled.NavBar>
             <Link 
               to={LOGIN_ROUTE}
-              css={{
-                borderColor: colors.red,
-                bgColor: colors.pinkLight
-              }}
               onClick={() => user.setIsAuth(true)}
             >
               Авторизация

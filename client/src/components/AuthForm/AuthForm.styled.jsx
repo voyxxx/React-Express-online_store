@@ -9,7 +9,7 @@ export const AuthForm = styled.form`
   border-radius: 4px;
   ${flexCSS({ direction: 'column', justify: 'center' })};
 
-  // eslint-disable-next-line no-unused-vars
+  /* eslint-disable no-unused-vars */
   .loginButton-row {
     ${flexCSS({justify: 'space-between'})};
     width: 100%;
