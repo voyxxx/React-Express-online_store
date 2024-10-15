@@ -14,7 +14,7 @@ export const Header = styled.header`
   background-color: rgb(${colors.orangeLight});
   box-shadow: inset 0 0 24px 4px rgb(${colors.pinkLight});
   border-radius: 8px;
-  ${flexCSS};
+  ${flexCSS({justify: 'space-between'})};
 `
 
 

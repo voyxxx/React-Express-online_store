@@ -5,6 +5,13 @@ import { flexCSS } from 'src/common/styled/common.styled';
 
 export const AuthForm = styled.form`
   padding: 20px 40px;
-  border: 2px solid rgb(${colors.black});
-  ${flexCSS({ direction: 'column' })};
+  border: 2px solid rgb(${colors.blackLight});
+  border-radius: 4px;
+  ${flexCSS({ direction: 'column', justify: 'center' })};
+
+  // eslint-disable-next-line no-unused-vars
+  .loginButton-row {
+    ${flexCSS({justify: 'space-between'})};
+    width: 100%;
+  }
 `

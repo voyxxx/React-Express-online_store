@@ -1,12 +1,18 @@
 import * as Styled from './AuthForm.styled'
-import { colors } from 'src/common/styled/constants';
+import { colors } from 'src/common/styled/constants'
 import React from "react";
 
-import {AuthInput} from './components/Input';
+import { AuthInput } from './components/Input'
+import Button from 'src/components/Basic/Button'
 
 const Auth = () => {
   return (
-    <Styled.AuthForm>
+    <Styled.AuthForm
+      onSubmit={(e) => {
+        e.preventDefault()
+        console.log('form submit')
+      }}
+    >
       <h1>Авторизация</h1>
       <AuthInput
         type="text"
@@ -18,7 +24,17 @@ const Auth = () => {
         type="password"
         placeholder="Введите ваш пароль..."
       />
-      <button type='submit'>Логин</button>
+      <div className="loginButton-row">
+        Нет аккаунта, зарегистрируйтесь
+        <Button
+          type='submit'
+          alignSelf='flex-end'
+          padding='8px 24px'
+          backgroundColor={`rgb(${colors.orangeLight})`}
+        >
+          Войти
+        </Button>
+      </div>
     </Styled.AuthForm>
   );
 };

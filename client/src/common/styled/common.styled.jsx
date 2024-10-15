@@ -1,12 +1,10 @@
 import { css } from "styled-components";
 
-export const flexCSS = (props) => css`
-  && {
-    display: flex; 
-    flex-direction: ${props.direction || 'row'};
-    align-items: ${props.align || 'center'};
-    justify-content: ${props.justify || 'space-between'};
-    gap: ${props.gap || '0'};
-  }
-`
+export const flexCSS = (props = {}) => css`
+    display: flex;
+    align-items: ${props.align ? `${props.align};` : 'center;'}
+    ${props.direction ? `flex-direction: ${props.direction};` : ''}
+    ${props.justify ? `justify-content: ${props.justify};` : ''}
+    ${props.gap ? `gap: ${props.gap};` : ''}
+`;
 
