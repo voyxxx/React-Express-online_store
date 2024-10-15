@@ -11,7 +11,7 @@ const StyledLink = styled(({ css, ...props }) => <RouterLink {...props} />)`
   color: ${({css}) => css?.color || `rgb(${colors.black})`};
   background-color: ${({css}) => css?.bgColor ? `rgb(${css?.bgColor})` : `inherit`};
   border: ${({css}) => css?.borderColor ? `1px solid rgb(${css?.borderColor})` : 'none'};
-  font-weight: bold;
+  font-weight: ${({css}) => css?.fontWeight ? css.fontWeight : ''};
   transition: all .4s;
 
   &:hover {

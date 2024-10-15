@@ -1,12 +1,11 @@
-import * as Styled from './NavBar.styled';
-import { colors } from 'src/common/styled/constants';
+import * as Styled from './NavBar.styled'
 
-import React, { useContext } from 'react';
-import { observer } from 'mobx-react-lite';
+import React, { useContext } from 'react'
+import { observer } from 'mobx-react-lite'
 
-import { Context } from "../..";
-import Link from 'src/components/Link/Link';
-import { SHOP_ROUTE, LOGIN_ROUTE, ADMIN_ROUTE } from 'src/utils/const';
+import { SHOP_ROUTE, LOGIN_ROUTE, ADMIN_ROUTE } from 'src/utils/const'
+import { Context } from '../..'
+import Link from './components/Link'
 
 const NavBar = observer(() => {
   const { user } = useContext(Context)
@@ -22,19 +21,11 @@ const NavBar = observer(() => {
           <Styled.NavBar>
             <Link 
               to={ADMIN_ROUTE}
-              css={{
-                borderColor: colors.red,
-                bgColor: colors.pinkLight
-              }}
             >
               Админ панель
             </Link>
             <Link 
               to={SHOP_ROUTE}
-              css={{
-                borderColor: colors.red,
-                bgColor: colors.pinkLight
-              }}
               onClick={() => user.setIsAuth(false)}
             >
               Выйти

@@ -11,7 +11,7 @@ export const AuthForm = styled.form`
 
   /* eslint-disable no-unused-vars */
   .loginButton-row {
-    ${flexCSS({justify: 'space-between'})};
+    ${flexCSS()};
     width: 100%;
   }
 `

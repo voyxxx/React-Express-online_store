@@ -16,6 +16,7 @@ const Button = (props) => {
       $BorderColor={props.borderColor}
       $Color={props.color}
       $Height={props.height}
+      $Margin={props.margin}
       $Padding={props.padding}
       $Width={props.width}
     >

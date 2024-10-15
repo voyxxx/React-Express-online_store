@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Button = styled.button(props => ({
   alignSelf: props.$AlignSelf,
+  margin: props.$Margin,
   padding: props.$Padding || '8px 16px',
   width: props.$Width,
   height: props.$Height,

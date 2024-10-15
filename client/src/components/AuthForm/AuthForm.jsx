@@ -31,15 +31,15 @@ const Auth = () => {
         <Link
           to={REGISTRATION_ROUTE}
           css={{
-            borderColor: colors.red,
-            bgColor: colors.pinkLight
+            color: colors.violet,
+            padding: '0 0 0 4px',
           }}
         >
-          Админ панель
-        </Link>зарегистрируйтесь
+          зарегистрируйтесь
+        </Link>
         <Button
           type='submit'
-          alignSelf='flex-end'
+          margin='0 0 0 auto'
           padding='8px 24px'
           backgroundColor={`rgb(${colors.orangeLight})`}
         >
