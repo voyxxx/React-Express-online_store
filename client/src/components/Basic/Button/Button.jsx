@@ -2,7 +2,7 @@ import React from "react";
 
 import * as Styled from './Button.styled'
 
-const Button = (props) => {
+const Button = ({children, ...props}) => {
   return (
     <Styled.Button
       className={props.className}
@@ -15,12 +15,13 @@ const Button = (props) => {
       $Border={props.border}
       $BorderColor={props.borderColor}
       $Color={props.color}
+      $FontSize={props.fontSize}
       $Height={props.height}
       $Margin={props.margin}
       $Padding={props.padding}
       $Width={props.width}
     >
-      Войти
+      {children}
     </Styled.Button>
   )
 }

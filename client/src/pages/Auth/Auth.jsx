@@ -7,7 +7,6 @@ const Auth = () => {
   return (
     <Styled.AuthHolder>
       <AuthForm>
-
       </AuthForm>
     </Styled.AuthHolder>
   );

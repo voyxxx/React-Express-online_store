@@ -6,6 +6,6 @@ import { flexCSS } from 'src/common/styled/common.styled';
 
 export const AuthHolder = styled.div`
   height: calc(100vh - ${sizes.headerHeight});
-  width: 100vw;
+  width: 100%;
   ${flexCSS({ justify: 'center' })};
 `

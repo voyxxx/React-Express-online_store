@@ -5,17 +5,19 @@ import { observer } from 'mobx-react-lite'
 
 import { SHOP_ROUTE, LOGIN_ROUTE, ADMIN_ROUTE } from 'src/utils/const'
 import { Context } from '../..'
+import BaseLink from './../Link/Link'
 import Link from './components/Link'
 
 const NavBar = observer(() => {
   const { user } = useContext(Context)
   return (
     <Styled.Header>
-      <Link 
+      <BaseLink
         to={SHOP_ROUTE}
+        $Link
       >
         Ну и местечко
-      </Link>
+      </BaseLink>
       {user.isAuth 
         ?
           <Styled.NavBar>

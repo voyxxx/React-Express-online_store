@@ -1,13 +1,17 @@
 import * as Styled from './AuthForm.styled'
 import { colors } from 'src/common/styled/constants'
 import React from "react";
+import { useLocation } from 'react-router-dom';
 
+import { LOGIN_ROUTE, REGISTRATION_ROUTE } from 'src/utils/const';
 import { AuthInput } from './components/Input'
 import Link from 'src/components/Link/Link';
 import Button from 'src/components/Basic/Button'
-import { REGISTRATION_ROUTE } from 'src/utils/const';
 
 const Auth = () => {
+  const location = useLocation()
+  const isLogin = location.pathname === LOGIN_ROUTE
+
   return (
     <Styled.AuthForm
       onSubmit={(e) => {
@@ -15,7 +19,7 @@ const Auth = () => {
         console.log('form submit')
       }}
     >
-      <h1>Авторизация</h1>
+      <h1>{isLogin ? 'Авторизация' : 'Регистрация'}</h1>
       <AuthInput
         type="text"
         placeholder="Введите ваш email..."
@@ -27,23 +31,40 @@ const Auth = () => {
         placeholder="Введите ваш пароль..."
       />
       <div className="loginButton-row">
-        Нет аккаунта,
-        <Link
-          to={REGISTRATION_ROUTE}
-          css={{
-            color: colors.violet,
-            padding: '0 0 0 4px',
-          }}
-        >
-          зарегистрируйтесь
-        </Link>
+        {isLogin
+          ? <>
+            Нет аккаунта,
+            <Link
+              to={REGISTRATION_ROUTE}
+              css={{
+                color: colors.blue,
+                padding: '0 0 0 4px',
+              }}
+            >
+              зарегистрируйтесь
+            </Link>
+          </>
+         : <>
+            Есть аккаунт,
+            <Link
+              to={LOGIN_ROUTE}
+              css={{
+                color: colors.blue,
+                padding: '0 0 0 4px',
+              }}
+            >
+              войдите
+            </Link>
+          </>
+        }
         <Button
           type='submit'
           margin='0 0 0 auto'
-          padding='8px 24px'
+          padding='12px 32px'
+          fontSize='16px'
           backgroundColor={`rgb(${colors.orangeLight})`}
         >
-          Войти
+          {isLogin ? 'Войти' : 'Регистрация'}
         </Button>
       </div>
     </Styled.AuthForm>
