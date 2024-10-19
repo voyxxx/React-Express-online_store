@@ -13,7 +13,7 @@ export const colors = {
 }
 
 export const sizes = {
-  headerHeight: '40px',
+  headerHeight: '80px',
 }
 
 export const mainColor = colors.orange

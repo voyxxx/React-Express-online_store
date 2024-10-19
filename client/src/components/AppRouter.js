@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-// import Shop from "../pages/Shop";
+
 import { authRoutes, publicRoutes } from "../routes";
 import { Context } from "../index";
 

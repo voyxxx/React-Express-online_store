@@ -1,7 +1,7 @@
-import React from "react";
-import { Link as RouterLink } from "react-router-dom";
-import styled from 'styled-components';
-import { colors } from "src/common/styled/constants";
+import React from 'react'
+import { Link as RouterLink } from 'react-router-dom'
+import styled from 'styled-components'
+import { colors } from 'src/common/styled/constants'
 
 const StyledLink = styled(({ css, $Link, ...props }) => <RouterLink {...props} />)`
   text-decoration: none;
@@ -31,4 +31,4 @@ const Link = (props) => {
   )
 }
 
-export default Link;
+export default Link
