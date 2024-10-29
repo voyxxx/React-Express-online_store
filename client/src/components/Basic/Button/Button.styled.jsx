@@ -7,6 +7,7 @@ export const Button = styled.button(props => ({
   width: props.$Width,
   height: props.$Height,
   fontSize: props.$FontSize,
+  fontWeight: props.$FontWeight,
   borderRadius: '4px',
   border:  props.$BorderColor ? `2px solid ${props.$BorderColor}` : props.$Border || 'none',
   backgroundColor: props.$BackgroundColor,

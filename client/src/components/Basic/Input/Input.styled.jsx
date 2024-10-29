@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { colors } from "src/common/styled/constants" 
+import styled from 'styled-components'
+import { colors } from 'src/common/styled/constants'
 
 export const Input = styled.input`
   min-width: 400px;

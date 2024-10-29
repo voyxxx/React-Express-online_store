@@ -4,6 +4,7 @@ export const colors = {
   orange: '255, 165, 0',
   pinkLight: '255,179,162',
   grey: '192, 192, 192',
+  seagreen: '143, 188, 143',
   cyan: '33, 130, 141',
   violet: '238, 130, 238',
   blue: '8, 113, 217',

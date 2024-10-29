@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 
-import { colors } from 'src/common/styled/constants'
+import { colors, sizes } from 'src/common/styled/constants'
 
 export const ShopStyled = styled.div`
   display: flex;
   padding: 24px;
-  min-height: 100dvh;
+  min-height: calc(100dvh - ${sizes.headerHeight});
   background-color: rgba(${colors.yellow}, .1);
 `
 
