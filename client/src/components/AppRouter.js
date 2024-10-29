@@ -1,11 +1,13 @@
-import React, { useContext } from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
+import React, { useContext } from 'react'
+import { observer } from 'mobx-react-lite'
+import { Navigate, Route, Routes } from 'react-router-dom'
 
 import { authRoutes, publicRoutes } from "../routes";
 import { Context } from "../index";
 
-const AppRouter = () => {
+const AppRouter = observer(() => {
   const { user } = useContext(Context)
+
   return (
     <Routes>
       {user.isAuth && authRoutes.map(({ path, Component }) => (
@@ -16,7 +18,7 @@ const AppRouter = () => {
       ))}
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
-  );
-};
+  )
+})
 
 export default AppRouter;

@@ -62,7 +62,7 @@ const Auth = () => {
           margin='0 0 0 auto'
           padding='12px 32px'
           fontSize='16px'
-          backgroundColor={`rgb(${colors.orangeLight})`}
+          backgroundColor={colors.orangeLight}
         >
           {isLogin ? 'Войти' : 'Регистрация'}
         </Button>

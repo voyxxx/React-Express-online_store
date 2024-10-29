@@ -3,13 +3,13 @@ import React from 'react'
 
 import { flexCSS } from 'src/common/styled/common.styled'
 import bigStar from 'src/assets/icons/BigStar.svg'
-import { colors, sizes } from 'src/common/styled/constants'
+import { colors } from 'src/common/styled/constants'
+import { defaultMain } from 'src/common/styled/common.styled'
 import { Button } from 'src/components/Basic/Button/Button.styled'
 
 export const DevicePageStyled = styled.article`
+  ${defaultMain};
   padding: 20px;
-  background-color: rgba(${colors.yellow}, .1);
-  min-height: calc(100dvh - ${sizes.headerHeight});
 `
 
 export const DevicePageHeaderStyled = styled.header`
@@ -48,7 +48,7 @@ export  const DevicePageBuyCardButtonStyled = ({children}) => {
     <Button
       $FontSize='16px'
       $Padding='16px 20px'
-      $BackgroundColor={`rgb(${colors.orangeLight})`}
+      $BackgroundColor={colors.orangeLight}
       $Color={`rgb(${colors.blackLight})`}
       $BorderColor={`rgb(${colors.blackLight}, .3)`}
       $FontWeight='bold'

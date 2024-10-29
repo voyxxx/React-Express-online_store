@@ -10,6 +10,7 @@ import Link from './components/Link'
 
 const NavBar = observer(() => {
   const { user } = useContext(Context)
+
   return (
     <Styled.Header>
       <BaseLink
@@ -21,23 +22,26 @@ const NavBar = observer(() => {
       {user.isAuth 
         ?
           <Styled.NavBar>
-            <Link 
+            <Link
               to={ADMIN_ROUTE}
+              // onClick={() => history(ADMIN_ROUTE)}
             >
               Админ панель
             </Link>
-            <Link 
+            <Link
               to={SHOP_ROUTE}
               onClick={() => user.setIsAuth(false)}
+              // onClick={() => history(SHOP_ROUTE)}
             >
               Выйти
             </Link>
           </Styled.NavBar>
         :
           <Styled.NavBar>
-            <Link 
+            <Link
               to={LOGIN_ROUTE}
               onClick={() => user.setIsAuth(true)}
+              // onClick={() => history(LOGIN_ROUTE)}
             >
               Авторизация
             </Link>
@@ -47,4 +51,4 @@ const NavBar = observer(() => {
   )
 })
 
-export default NavBar;
+export default NavBar

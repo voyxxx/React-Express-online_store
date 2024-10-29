@@ -1,4 +1,5 @@
-import { css } from "styled-components";
+import { css } from 'styled-components'
+import { colors, sizes } from 'src/common/styled/constants'
 
 export const flexCSS = (props = {}) => css`
     display: flex;
@@ -8,5 +9,9 @@ export const flexCSS = (props = {}) => css`
     ${props.alignContent ? `align-content: ${props.alignContent};` : ''}
     ${props.justify ? `justify-content: ${props.justify};` : ''}
     ${props.gap ? `gap: ${props.gap};` : ''}
-`;
+`
 
+export const defaultMain = (props = {}) => css`
+    min-height: calc(100dvh - ${sizes.headerHeight});
+    background-color: rgba(${colors.yellow}, .1);
+`
